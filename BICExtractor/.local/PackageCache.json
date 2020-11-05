@@ -152,6 +152,35 @@
         "C:\\Users\\P4L\\.nuget\\packages\\uipath.webapi.activities/1.6.0\\lib/net452/UiPath.Web.dll"
       ],
       "Path": "C:\\Users\\P4L\\.nuget\\packages\\uipath.webapi.activities\\1.6.0"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Mail.Activities",
+        "Version": "1.9.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\bouncycastle/1.8.5\\lib/BouncyCastle.Crypto.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis/1.43.0\\lib/net45/Google.Apis.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis/1.43.0\\lib/net45/Google.Apis.PlatformServices.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.auth/1.43.0\\lib/net45/Google.Apis.Auth.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.auth/1.43.0\\lib/net45/Google.Apis.Auth.PlatformServices.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.calendar.v3/1.43.0.1872\\lib/net45/Google.Apis.Calendar.v3.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.core/1.43.0\\lib/net45/Google.Apis.Core.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.gmail.v1/1.43.0.1859\\lib/net45/Google.Apis.Gmail.v1.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.peopleservice.v1/1.43.0.1876\\lib/net45/Google.Apis.PeopleService.v1.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\interop.domino.dll/1.0.0\\lib/Interop.Domino.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.Auth.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\microsoft.exchange.webservices/2.2.0\\lib/40/Microsoft.Exchange.WebServices.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\microsoft.identity.client/4.14.0\\lib/net45/Microsoft.Identity.Client.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities/1.9.3\\lib/net461/MailKit.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities/1.9.3\\lib/net461/MimeKit.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities/1.9.3\\lib/net461/UiPath.Mail.Activities.Design.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities/1.9.3\\lib/net461/UiPath.Mail.Activities.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities/1.9.3\\lib/net461/UiPath.Mail.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities\\1.9.3"
     }
   ],
   "Conflicts": [],
@@ -190,6 +219,11 @@
       "Version": "5.0.3",
       "Dependencies": []
     },
+    "BouncyCastle": {
+      "Id": "BouncyCastle",
+      "Version": "1.8.5",
+      "Dependencies": []
+    },
     "ClosedXML": {
       "Id": "ClosedXML",
       "Version": "0.87.1",
@@ -215,9 +249,94 @@
       "Version": "3.8.1",
       "Dependencies": []
     },
+    "Google.Apis": {
+      "Id": "Google.Apis",
+      "Version": "1.43.0",
+      "Dependencies": [
+        {
+          "Item1": "Google.Apis.Core",
+          "Item2": "[1.43.0, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[10.0.2, )"
+        }
+      ]
+    },
+    "Google.Apis.Auth": {
+      "Id": "Google.Apis.Auth",
+      "Version": "1.43.0",
+      "Dependencies": [
+        {
+          "Item1": "Google.Apis.Core",
+          "Item2": "[1.43.0, )"
+        },
+        {
+          "Item1": "Google.Apis",
+          "Item2": "[1.43.0, )"
+        }
+      ]
+    },
+    "Google.Apis.Calendar.v3": {
+      "Id": "Google.Apis.Calendar.v3",
+      "Version": "1.43.0.1872",
+      "Dependencies": [
+        {
+          "Item1": "Google.Apis",
+          "Item2": "[1.43.0, )"
+        },
+        {
+          "Item1": "Google.Apis.Auth",
+          "Item2": "[1.43.0, )"
+        }
+      ]
+    },
+    "Google.Apis.Core": {
+      "Id": "Google.Apis.Core",
+      "Version": "1.43.0",
+      "Dependencies": [
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[10.0.2, )"
+        }
+      ]
+    },
+    "Google.Apis.Gmail.v1": {
+      "Id": "Google.Apis.Gmail.v1",
+      "Version": "1.43.0.1859",
+      "Dependencies": [
+        {
+          "Item1": "Google.Apis",
+          "Item2": "[1.43.0, )"
+        },
+        {
+          "Item1": "Google.Apis.Auth",
+          "Item2": "[1.43.0, )"
+        }
+      ]
+    },
+    "Google.Apis.PeopleService.v1": {
+      "Id": "Google.Apis.PeopleService.v1",
+      "Version": "1.43.0.1876",
+      "Dependencies": [
+        {
+          "Item1": "Google.Apis",
+          "Item2": "[1.43.0, )"
+        },
+        {
+          "Item1": "Google.Apis.Auth",
+          "Item2": "[1.43.0, )"
+        }
+      ]
+    },
     "Humanizer.Core": {
       "Id": "Humanizer.Core",
       "Version": "2.4.2",
+      "Dependencies": []
+    },
+    "interop.domino.dll": {
+      "Id": "interop.domino.dll",
+      "Version": "1.0.0",
       "Dependencies": []
     },
     "Microsoft.AspNet.SignalR.Client": {
@@ -376,6 +495,11 @@
         }
       ]
     },
+    "Microsoft.Exchange.WebServices": {
+      "Id": "Microsoft.Exchange.WebServices",
+      "Version": "2.2.0",
+      "Dependencies": []
+    },
     "Microsoft.Extensions.Configuration": {
       "Id": "Microsoft.Extensions.Configuration",
       "Version": "3.1.6",
@@ -483,6 +607,11 @@
           "Item2": "[4.7.1, )"
         }
       ]
+    },
+    "Microsoft.Identity.Client": {
+      "Id": "Microsoft.Identity.Client",
+      "Version": "4.14.0",
+      "Dependencies": []
     },
     "Microsoft.Rest.ClientRuntime": {
       "Id": "Microsoft.Rest.ClientRuntime",
@@ -704,6 +833,56 @@
         },
         {
           "Item1": "SharpZipLib",
+          "Item2": "[1.0.0, )"
+        }
+      ]
+    },
+    "UiPath.Mail.Activities": {
+      "Id": "UiPath.Mail.Activities",
+      "Version": "1.9.3",
+      "Dependencies": [
+        {
+          "Item1": "System.ValueTuple",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "Google.Apis",
+          "Item2": "[1.43.0, )"
+        },
+        {
+          "Item1": "Microsoft.Exchange.WebServices",
+          "Item2": "[2.2.0, )"
+        },
+        {
+          "Item1": "Microsoft.Identity.Client",
+          "Item2": "[4.14.0, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[11.0.1, )"
+        },
+        {
+          "Item1": "BouncyCastle",
+          "Item2": "[1.8.5, )"
+        },
+        {
+          "Item1": "Google.Apis.Auth",
+          "Item2": "[1.43.0, )"
+        },
+        {
+          "Item1": "Google.Apis.Calendar.v3",
+          "Item2": "[1.43.0.1872, )"
+        },
+        {
+          "Item1": "Google.Apis.Gmail.v1",
+          "Item2": "[1.43.0.1859, )"
+        },
+        {
+          "Item1": "Google.Apis.PeopleService.v1",
+          "Item2": "[1.43.0.1876, )"
+        },
+        {
+          "Item1": "interop.domino.dll",
           "Item2": "[1.0.0, )"
         }
       ]
@@ -955,6 +1134,16 @@
     },
     {
       "Package": {
+        "Id": "BouncyCastle",
+        "Version": "1.8.5"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\bouncycastle\\1.8.5\\lib\\BouncyCastle.Crypto.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\bouncycastle\\1.8.5"
+    },
+    {
+      "Package": {
         "Id": "ClosedXML",
         "Version": "0.87.1"
       },
@@ -999,6 +1188,68 @@
     },
     {
       "Package": {
+        "Id": "Google.Apis",
+        "Version": "1.43.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis\\1.43.0\\lib\\net45\\Google.Apis.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis\\1.43.0\\lib\\net45\\Google.Apis.PlatformServices.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\google.apis\\1.43.0"
+    },
+    {
+      "Package": {
+        "Id": "Google.Apis.Auth",
+        "Version": "1.43.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.auth\\1.43.0\\lib\\net45\\Google.Apis.Auth.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.auth\\1.43.0\\lib\\net45\\Google.Apis.Auth.PlatformServices.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\google.apis.auth\\1.43.0"
+    },
+    {
+      "Package": {
+        "Id": "Google.Apis.Calendar.v3",
+        "Version": "1.43.0.1872"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.calendar.v3\\1.43.0.1872\\lib\\net45\\Google.Apis.Calendar.v3.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\google.apis.calendar.v3\\1.43.0.1872"
+    },
+    {
+      "Package": {
+        "Id": "Google.Apis.Core",
+        "Version": "1.43.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.core\\1.43.0\\lib\\net45\\Google.Apis.Core.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\google.apis.core\\1.43.0"
+    },
+    {
+      "Package": {
+        "Id": "Google.Apis.Gmail.v1",
+        "Version": "1.43.0.1859"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.gmail.v1\\1.43.0.1859\\lib\\net45\\Google.Apis.Gmail.v1.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\google.apis.gmail.v1\\1.43.0.1859"
+    },
+    {
+      "Package": {
+        "Id": "Google.Apis.PeopleService.v1",
+        "Version": "1.43.0.1876"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\google.apis.peopleservice.v1\\1.43.0.1876\\lib\\net45\\Google.Apis.PeopleService.v1.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\google.apis.peopleservice.v1\\1.43.0.1876"
+    },
+    {
+      "Package": {
         "Id": "Humanizer.Core",
         "Version": "2.4.2"
       },
@@ -1006,6 +1257,16 @@
         "C:\\Users\\P4L\\.nuget\\packages\\humanizer.core\\2.4.2\\lib\\netstandard2.0\\Humanizer.dll"
       ],
       "Path": "C:\\Users\\P4L\\.nuget\\packages\\humanizer.core\\2.4.2"
+    },
+    {
+      "Package": {
+        "Id": "interop.domino.dll",
+        "Version": "1.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\interop.domino.dll\\1.0.0\\lib\\Interop.Domino.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\interop.domino.dll\\1.0.0"
     },
     {
       "Package": {
@@ -1109,6 +1370,17 @@
     },
     {
       "Package": {
+        "Id": "Microsoft.Exchange.WebServices",
+        "Version": "2.2.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\microsoft.exchange.webservices\\2.2.0\\lib\\40\\Microsoft.Exchange.WebServices.Auth.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\microsoft.exchange.webservices\\2.2.0\\lib\\40\\Microsoft.Exchange.WebServices.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\microsoft.exchange.webservices\\2.2.0"
+    },
+    {
+      "Package": {
         "Id": "Microsoft.Extensions.Configuration",
         "Version": "3.1.6"
       },
@@ -1196,6 +1468,16 @@
         "C:\\Users\\P4L\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.6\\lib\\netstandard2.0\\Microsoft.Extensions.Primitives.dll"
       ],
       "Path": "C:\\Users\\P4L\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.6"
+    },
+    {
+      "Package": {
+        "Id": "Microsoft.Identity.Client",
+        "Version": "4.14.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\microsoft.identity.client\\4.14.0\\lib\\net45\\Microsoft.Identity.Client.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\microsoft.identity.client\\4.14.0"
     },
     {
       "Package": {
@@ -1431,6 +1713,20 @@
         "C:\\Users\\P4L\\.nuget\\packages\\uipath.excel.activities\\2.9.3\\lib\\net461\\UiPath.Excel.dll"
       ],
       "Path": "C:\\Users\\P4L\\.nuget\\packages\\uipath.excel.activities\\2.9.3"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.Mail.Activities",
+        "Version": "1.9.3"
+      },
+      "Assemblies": [
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities\\1.9.3\\lib\\net461\\MailKit.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities\\1.9.3\\lib\\net461\\MimeKit.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities\\1.9.3\\lib\\net461\\UiPath.Mail.Activities.Design.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities\\1.9.3\\lib\\net461\\UiPath.Mail.Activities.dll",
+        "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities\\1.9.3\\lib\\net461\\UiPath.Mail.dll"
+      ],
+      "Path": "C:\\Users\\P4L\\.nuget\\packages\\uipath.mail.activities\\1.9.3"
     },
     {
       "Package": {
