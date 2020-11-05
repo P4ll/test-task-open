@@ -106,9 +106,7 @@
                         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
                           <mca:CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">Config</mca:CSharpReference>
                         </OutArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
-                          <Literal x:TypeArguments="x:String">Data\Config.xlsx</Literal>
-                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
                         <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
                           <mca:CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">new String[] {"Settings","Constants"}</mca:CSharpValue>
                         </InArgument>
