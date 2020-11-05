@@ -2,10 +2,10 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="outputTable" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="io_outputTable" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1208,2491</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,2828</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -54,9 +54,11 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="724,2286" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="724,2623" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -64,28 +66,28 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="682,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="682,2027" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="682,2364" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Поиск'" sap:VirtualizedContainerService.HintSize="640,1935" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="fbb962b7b925a3da2525aba81e761a40" Selector="&lt;html title='Поиск банка по БИК' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Поиск'" sap:VirtualizedContainerService.HintSize="640,2272" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="fbb962b7b925a3da2525aba81e761a40" Selector="&lt;html title='Поиск банка по БИК' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="606,1789" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="606,2126" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="564,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://bkip.ru/searchbic.aspx" />
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,1598" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,1935" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <TryCatch.Try>
-                  <Sequence DisplayName="GetDataSequence" sap:VirtualizedContainerService.HintSize="526,1350" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="GetDataSequence" sap:VirtualizedContainerService.HintSize="526,1687" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="name" />
                       <Variable x:TypeArguments="x:String" Name="city" />
@@ -94,6 +96,7 @@
                       <Variable x:TypeArguments="x:String" Name="account" />
                       <Variable x:TypeArguments="x:String" Name="beginDate" />
                       <Variable x:TypeArguments="x:Boolean" Default="True" Name="mayStay" />
+                      <Variable x:TypeArguments="x:String" Name="rowPassed" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -117,7 +120,7 @@
                         </InArgument>
                       </ui:TypeInto.Text>
                     </ui:TypeInto>
-                    <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_7">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get name" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_7">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a5e71880-3e81-4ed3-a38b-366231d910db" InformativeScreenshot="54d9820ba2b7a40aa7c9acb663082c31" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl idx='1' tableCol='2' tag='TD' /&gt;" TimeoutMS="3000">
                           <ui:Target.WaitForReady>
@@ -125,8 +128,13 @@
                           </ui:Target.WaitForReady>
                         </ui:Target>
                       </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">
+                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">name</mca:CSharpReference>
+                        </OutArgument>
+                      </ui:GetValue.Value>
                     </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get city" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d774a221-3e32-4cf9-b9c1-2c420047469b" InformativeScreenshot="eebe40e94fe11dd70ec3a84f42bf2a97" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='3' tag='TD' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -143,7 +151,7 @@
                         </OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_9">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get address" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_9">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a11d8a4-837b-4a65-8afc-49c5c728d104" InformativeScreenshot="d20351e6d50a5406baf1ca49460a3ea7" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='4' tag='TD' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -160,7 +168,7 @@
                         </OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_10">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get OKPO" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_10">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e8c0c0e1-c1bd-486f-b3bb-0b26c472f42d" InformativeScreenshot="93f6c006c4d642a0925790549e83bf27" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='6' tag='TD' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -177,7 +185,7 @@
                         </OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_11">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get account" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_11">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="de9923e7-c037-4469-8f0c-0bfcc772b41d" InformativeScreenshot="598274d434336ada95c531ff41a40bbc" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='7' tag='TD' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -194,7 +202,7 @@
                         </OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'TD'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_12">
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get date" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_12">
                       <ui:GetValue.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="99fa9e23-4b98-4a41-9965-cf5c108d785c" InformativeScreenshot="a724215167e26a30fd108614e35538f3" Selector="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='8' tag='TD' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -211,27 +219,75 @@
                         </OutArgument>
                       </ui:GetValue.Value>
                     </ui:GetValue>
-                    <If sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_2">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Test data" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Tester.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="name">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">name</mca:CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="city">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">city</mca:CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="address">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">address</mca:CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="classifier">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">classifier</mca:CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="account">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">account</mca:CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="beginDate">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">beginDate</mca:CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="nameP">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">in_TransactionItem.SpecificContent["NameP"].ToString()</mca:CSharpValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="BIC">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">in_TransactionItem.SpecificContent["BIC"].ToString()</mca:CSharpValue>
+                        </InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_trouble">
+                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">rowPassed</mca:CSharpReference>
+                        </OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_mayStay">
+                          <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">mayStay</mca:CSharpReference>
+                        </OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <If sap:VirtualizedContainerService.HintSize="484,262" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">mayStay</mca:CSharpValue>
                         </InArgument>
                       </If.Condition>
                       <If.Then>
-                        <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
-                          <ui:AddDataRow.ArrayRow>
-                            <InArgument x:TypeArguments="s:Object[]">
-                              <mca:CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">new string[] {name, city, address, account, classifier, in_TransactionItem.SpecificContent["BIC"].ToString()}</mca:CSharpValue>
-                            </InArgument>
-                          </ui:AddDataRow.ArrayRow>
-                          <ui:AddDataRow.DataTable>
-                            <InOutArgument x:TypeArguments="sd:DataTable">
-                              <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">outputTable</mca:CSharpReference>
-                            </InOutArgument>
-                          </ui:AddDataRow.DataTable>
-                        </ui:AddDataRow>
+                        <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
+                            <ui:AddDataRow.ArrayRow>
+                              <InArgument x:TypeArguments="s:Object[]">
+                                <mca:CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">new string[] {name, city, address, account, classifier, in_TransactionItem.SpecificContent["BIC"].ToString()}</mca:CSharpValue>
+                              </InArgument>
+                            </ui:AddDataRow.ArrayRow>
+                            <ui:AddDataRow.DataTable>
+                              <InOutArgument x:TypeArguments="sd:DataTable">
+                                <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">io_outputTable</mca:CSharpReference>
+                              </InOutArgument>
+                            </ui:AddDataRow.DataTable>
+                          </ui:AddDataRow>
+                        </Sequence>
                       </If.Then>
                     </If>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+                      <ui:LogMessage.Message>
+                        <InArgument x:TypeArguments="x:Object">
+                          <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">rowPassed</mca:CSharpValue>
+                        </InArgument>
+                      </ui:LogMessage.Message>
+                    </ui:LogMessage>
                   </Sequence>
                 </TryCatch.Try>
                 <TryCatch.Catches>
